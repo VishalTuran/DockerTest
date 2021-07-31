@@ -13,13 +13,13 @@ public class SampleTest {
     @BeforeClass
     public void setUp(){
         String dir=System.getProperty("user.dir");
-        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_linux";
+        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_mac";
         System.setProperty("webdriver.chrome.driver", driverLocation);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
         options.addArguments("--window-size=1400,600");
         options.addArguments("--disable-extensions");
-        options.addArguments("--headless");
+        // options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("start-maximized");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
