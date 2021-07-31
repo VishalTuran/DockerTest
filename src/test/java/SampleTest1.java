@@ -8,18 +8,18 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
-public class SampleTest {
+public class SampleTest1 {
     WebDriver driver;
     @BeforeClass
     public void setUp(){
         String dir=System.getProperty("user.dir");
-        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_linux";
+        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_mac";
         System.setProperty("webdriver.chrome.driver", driverLocation);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
         options.addArguments("--window-size=1400,600");
         options.addArguments("--disable-extensions");
-         options.addArguments("--headless");
+        // options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("start-maximized");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
@@ -27,10 +27,11 @@ public class SampleTest {
 
         driver.manage().window().maximize();
     }
+
     @Test
-    public void assertGoogleTitle(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+    public void assertBingTitle(){
+        driver.get("https://www.bing.com");
+        Assert.assertTrue(driver.getTitle().contains("Bing"),"title mismatched");
     }
 
     @AfterClass
