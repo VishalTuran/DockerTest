@@ -11,4 +11,4 @@ RUN sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 # ADD . /testproject
 # WORKDIR /testproject
-ENTRYPOINT [ "java","-version","test"]
+ENTRYPOINT [ "java","-version"]
