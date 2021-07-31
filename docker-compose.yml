@@ -1,0 +1,15 @@
+version: "3.3"
+services: 
+  slave1:
+    restart: always
+    image: httpd
+    container_name: slave1
+    ports: 
+      - "8080:80"
+    
+
+
+
+
+
+
