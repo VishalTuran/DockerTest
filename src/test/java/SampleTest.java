@@ -17,7 +17,7 @@ public class SampleTest {
     @BeforeClass
     public void setUp() throws MalformedURLException {
         String dir=System.getProperty("user.dir");
-        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_macs";
+        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_mac";
         System.setProperty("webdriver.chrome.driver", driverLocation);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
