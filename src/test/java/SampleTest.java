@@ -16,20 +16,20 @@ public class SampleTest {
     WebDriver driver;
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        // String dir=System.getProperty("user.dir");
-        // String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_linux";
-        // System.setProperty("webdriver.chrome.driver", driverLocation);
-        // ChromeOptions options = new ChromeOptions();
-        // options.addArguments("test-type");
-        // options.addArguments("--window-size=1400,600");
-        // options.addArguments("--disable-extensions");
-        //  options.addArguments("--headless");
-        // options.addArguments("--no-sandbox");
-        // options.addArguments("start-maximized");
-        // System.setProperty("webdriver.chrome.whitelistedIps", "");
-        // driver = new ChromeDriver(options);
-        DesiredCapabilities desiredCapabilities= DesiredCapabilities.chrome();
-        driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapabilities);
+        String dir=System.getProperty("user.dir");
+        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_macs";
+        System.setProperty("webdriver.chrome.driver", driverLocation);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("test-type");
+        options.addArguments("--window-size=1400,600");
+        options.addArguments("--disable-extensions");
+         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("start-maximized");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
+        driver = new ChromeDriver(options);
+        // DesiredCapabilities desiredCapabilities= DesiredCapabilities.chrome();
+        // driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapabilities);
         driver.manage().window().maximize();
     }
 
