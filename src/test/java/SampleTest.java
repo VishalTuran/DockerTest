@@ -36,31 +36,56 @@ public class SampleTest {
     @Test
     public void assertGoogleTitle2(){
         driver.get("https://www.google.com");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
     }
 
     @Test
     public void assertGoogleTitle3(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        driver.get("https://www.bing.com");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(driver.getTitle().contains("Bing"),"title mismatched");
     }
 
     @Test
     public void assertGoogleTitle4(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        driver.get("https://www.facebook.com");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(driver.getTitle().contains("Facebook"),"title mismatched");
     }
 
     @Test
     public void assertGoogleTitle5(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        driver.get("https://www.gmail.com");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(driver.getTitle().contains("Gmail"),"title mismatched");
     }
 
     @Test
     public void assertGoogleTitle(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        driver.get("https://www.youtube.com");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(driver.getTitle().contains("Youtube"),"title mismatched");
     }
     @AfterClass
     public void tearDown(){
