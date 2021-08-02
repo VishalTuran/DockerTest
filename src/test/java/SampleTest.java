@@ -23,7 +23,7 @@ public class SampleTest {
         options.addArguments("test-type");
         options.addArguments("--window-size=1400,600");
         options.addArguments("--disable-extensions");
-        //  options.addArguments("--headless");
+         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("start-maximized");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
