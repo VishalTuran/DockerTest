@@ -13,17 +13,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SampleTest {
-    WebDriver driver;
-    @BeforeClass
-    public void setUp() throws MalformedURLException {
+    static WebDriver driver;
+
+    public static void setUp() throws MalformedURLException {
         String dir=System.getProperty("user.dir");
-        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_mac";
+        String driverLocation = dir + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "java" + File.separatorChar + "chromedriver_linux";
         System.setProperty("webdriver.chrome.driver", driverLocation);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("test-type");
         options.addArguments("--window-size=1400,600");
         options.addArguments("--disable-extensions");
-         options.addArguments("--headless");
+        //  options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("start-maximized");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
@@ -34,35 +34,37 @@ public class SampleTest {
     }
 
     @Test
-    public void assertGoogleTitle2(){
+    public void assertGoogleTitle3() throws MalformedURLException {
+        setUp();
         driver.get("https://www.google.com");
         Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        tearDown();
     }
 
     @Test
-    public void assertGoogleTitle3(){
+    public void assertGoogleTitle4() throws MalformedURLException {
+        setUp();
         driver.get("https://www.google.com");
         Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        tearDown();
     }
 
     @Test
-    public void assertGoogleTitle4(){
+    public void assertGoogleTitle5() throws MalformedURLException {
+        setUp();
         driver.get("https://www.google.com");
         Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        tearDown();
     }
 
     @Test
-    public void assertGoogleTitle5(){
+    public void assertGoogleTitle6() throws MalformedURLException {
+        setUp();
         driver.get("https://www.google.com");
         Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
+        tearDown();
     }
-
-    @Test
-    public void assertGoogleTitle(){
-        driver.get("https://www.google.com");
-        Assert.assertTrue(driver.getTitle().contains("Google"),"title mismatched");
-    }
-    @AfterClass
+    
     public void tearDown(){
         driver.quit();
     }
