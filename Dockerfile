@@ -11,7 +11,7 @@ RUN sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 ADD . /testproject
 WORKDIR /testproject
-ENTRYPOINT [ "java","-version"]
+ENTRYPOINT [ "mvn","clean","install -DsuiteXMLFile=src/test/resources/test1.xml"]
 
 # FROM jenkins/jenkins:2.289.3-lts-jdk11
 # USER root
